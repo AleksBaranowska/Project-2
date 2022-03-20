@@ -100,49 +100,41 @@
             </div>
         </div>
 
-
-
         <div id="main">
-            <div>
-                <div>
-                    <img class="option" id="rock" src="">
+            <div class="row justify-content-center mt-5">
+                <div class="col-sm-4 col-12 d-flex justify-content-center">
+                    <img class="option" id="rock" src="https://res.cloudinary.com/dmbzj2ym7/image/upload/v1647511763/images/220rock_pbiuoa.jpg">
                 </div>
-                <div>
-                    <img class="option" id="paper" src="">
+                <div class="col-sm-4 col-12 d-flex justify-content-center">
+                    <img class="option" id="paper" src="https://res.cloudinary.com/dmbzj2ym7/image/upload/v1647511763/images/220paper_sqx3ed.jpg">
                 </div>
-                <div">
-                    <img class="option" id="scissors" src="">
+                <div class="col-sm-6 col-12 d-flex justify-content-center">
+                    <img class="option" id="scissors" src="https://res.cloudinary.com/dmbzj2ym7/image/upload/v1647511763/images/220scissors_yuqm37.jpg">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="alert alert-info" role="alert"><h2 style="text-align:center" id="result"></h2></div>
             </div>
         </div>
-        <div>
-            <div>
-                <h2 id="result"></h2>
-            </div>
-        </div>
-    </div>
 
-    <div id="gameScore">
-        <div>
-            <h2>Scores</h2>
-        </div>
-        <div>
-            <div>
-                <table id="gameScores">
-                    <tr>
-                        <th>Won</th>
-                        <th>Lost</th>
-                        <th>Drawn</th>
-                    </tr>
-                </table>
+        <div id="gameScore">
+            <div class="row justify-content-center mt-5">
+                <h2>Scores</h2>
             </div>
-
-        </div>
-        <div>
-            <div>
-                <button type="button">Play Again</button>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6 col-12">
+                    <table id="gameScores">
+                        <tr><th>Won</th><th>Lost</th><th>Drawn</th></tr>
+                    </table>
+                </div>
+                
             </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-6 d-flex justify-content-center">   
+                    <button type="button" class="btn btn-success" onclick="resetGame();">Play Again</button>
+                </div>
+            </div>     
         </div>
-    </div>
 
     <div id="scoreboard">
         <div>
