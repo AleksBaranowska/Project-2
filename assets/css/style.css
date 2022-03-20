@@ -1,38 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Lustria&display=swap');
-
-.outer {
-    text-align: center;
-    background-image: url("../images/rock-paper-scissors.png");
-    background-repeat: no-repeat;
-    background-color: #0E3EDA;
-    background-position: 50% 50%;
-    /* background-position: center; */
-    background-size:contain;
-    
-}
-h1, h2, h3 {
-    font-family: 'Lato', sans-serif;
-    font-family: 'Lustria', serif;
-    text-transform: uppercase;
+body{
+    padding-top: 90px;
 }
 
-p {
-    font-family: 'Lato', sans-serif;
+
+#logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
-input, label {
-    display:block;
-    margin:0 auto;
-    padding: 2em;
-    text-align: center;
+.nav-link{
+    font-size: large;
+    color: white;
 }
 
-#game{
-    /* display: none; */
-}
-.button{
-
-}
-.buttons{
-    
+#logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }

@@ -8,7 +8,7 @@
     <meta name="description" content="Rock, Paper, Scissors interactive game">
     <meta name="keywords" content="Rock, Paper, Scissors game">
     <meta name="author" content="Aleksandra Baranowska">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Lustria&display=swap"
@@ -21,62 +21,67 @@
 </head>
 
 <body>
-    <nav>
-        <a></a>
-        <div>
+    <nav class="navbar navbar-expand-md fixed-top bg-dark">
+        <a class="navbar-brand" href="index.html"><img id="logo"
+                src="https://res.cloudinary.com/dmbzj2ym7/image/upload/v1647424182/images/rock-paper-scissors_r2i91p.png"></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <h1>Rock Paper Scissors</h1>
-            <ul>
+            <ul class="navbar-nav mr-auto">
                 <!-- <li class="nav-item">
                     <a class="nav-link ml-4" href="index.html">Home</a>
                 </li> -->
-                <li>
-                    <button>Score Board</button>
+                <li class="nav-item">
+                    <button class="btn btn-danger nav-link ml-4" onclick="showLeaderBoard();">Score Board</button>
                 </li>
         </div>
         <table id="score-menu">
             <tr>
-                <th>Scores</th>
+                <th colspan="2">Scores</th>
             </tr>
             <tr>
                 <td>Rounds Left :</td>
-                <td>10</td>
+                <td id="round">10</td>
             </tr>
             <tr>
                 <td>Computer :</td>
-                <td>0</td>
+                <td id="computerScore">0</td>
             </tr>
             <tr>
-                <td>User :</td>
-                <td>0</td>
+                <td id="playerName">User :</td>
+                <td id="playerScore">0</td>
             </tr>
         </table>
     </nav>
 
-    <div>
-        <div>
-            <div>
-                <div>
-                    <div>
+
+    <div class="container">
+
+        <div id="landing-screen">
+            <div class="row justify-content-center mt-5">
+                <div class="col-sm-6 pt-5 justify-content-center">
+                    <div class="form-group">
                         <label for="name">Name:</label>
-                        <input id="name" placeholder="Enter your Name">
+                        <input type="text" class="form-control" id="name" placeholder="Enter your Name">
                     </div>
-                    <button type="submit">Start</button>
-                    <button type="button">How to Play?</button>
-                    <div>
-                        <div>
-                            <h2></h2>
+                    <button type="submit" class="btn btn-success" onclick="init();">Start</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#instructionsModal">How to Play?</button>
+                    <div class="row justify-content-center mt-5">
+                        <div class="alert alert-info" role="alert">
+                            <h2 style="text-align:center" id="error"></h2>
                         </div>
                     </div>
-                    <div aria-labelledby="instructions" aria-hidden="true">
-                        <div>
-                            <div>
-                                <div>
-                                    <h5>Instructions</h5>
-                                    <button type="button" aria-label="Close">
+                    <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog"
+                        aria-labelledby="instructions" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="title">Instructions</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div>
+                                <div class="modal-body">
                                     <ol>
                                         <li>Enter your name and click on the "Start" button.</li>
                                         <li>Click on one of the three buttons. "Rock", "Paper" or "Scissors".</li>
@@ -86,7 +91,7 @@
                                         <li>Good Luck!</li>
                                     </ol>
                                 </div>
-                                <div>
+                                <div class="modal-footer">
                                 </div>
                             </div>
                         </div>
@@ -94,25 +99,26 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="main">
+
+
+        <div id="main">
+            <div>
+                <div>
+                    <img class="option" id="rock" src="">
+                </div>
+                <div>
+                    <img class="option" id="paper" src="">
+                </div>
+                <div">
+                    <img class="option" id="scissors" src="">
+            </div>
+        </div>
         <div>
             <div>
-                <img class="option" id="rock" src="">
+                <h2 id="result"></h2>
             </div>
-            <div>
-                <img class="option" id="paper" src="">
-            </div>
-            <div">
-                <img class="option" id="scissors" src="">
         </div>
-    </div>
-    <div>
-        <div>
-            <h2 id="result"></h2>
-        </div>
-    </div>
     </div>
 
     <div id="gameScore">
@@ -153,10 +159,17 @@
             </div>
         </div>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="/assets/js/script.js"></script>
 </body>
 
