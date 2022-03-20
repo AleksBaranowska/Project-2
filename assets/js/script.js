@@ -135,3 +135,31 @@ function showLeaderBoard(){
         table.append(row);
     }
 }
+function descendingSort(a, b) {    
+    if (a[1] > b[1]) return -1
+    if (a[1] < b[1]) return 1
+    return 0
+  }
+
+function getComputerChoice(){
+    let choice = Math.floor(Math.random() * 3);
+    computerChoice= choices[choice];
+}
+
+function resetRound(){
+    for (var i = 0; i < options.length; i++) {
+        options[i].style.borderColor = 'blue';
+        options[i].style.boxShadow = '0 0 10px rgb(0, 0, 255)';
+    }
+}
+
+function resetGame(){
+    playerChoice = null;
+    computerChoice = null;
+    computerScore = 0;
+    playerScore = 0;
+    playerName = null;
+    rounds = 10;
+    gameScoreBoard.style.display="none";
+    landingScreen.style.display='block';
+}
