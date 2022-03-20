@@ -1,25 +1,28 @@
-body{
+body {
     padding-top: 90px;
 }
 
-h1, #score-menu{
+h1,
+#score-menu {
     text-align: center;
     color: white;
 }
 
-#score-menu{
+#score-menu {
     width: 150px;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
-#rock, #paper ,#scissors{
+#rock,
+#paper,
+#scissors {
     width: 200px;
 }
 
-.option{
+.option {
     display: flex;
     justify-content: center;
     width: 200px;
@@ -29,35 +32,39 @@ h2{
     box-shadow: 0 0 10px rgb(0, 0, 255);
 }
 
-.option:hover{
+.option:hover {
     border: 3px solid green;
 }
 
-#main{
+#main {
     background-color: rgb(253, 251, 251);
     display: none;
 }
-#logo{
+
+#logo {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.nav-link{
+.nav-link {
     font-size: large;
     color: white;
 }
 
-#scoreboard, #gameScore{
+#scoreboard,
+#gameScore {
     display: none;
 }
 
-#scores, #gameScores{
+#scores,
+#gameScores {
     width: 100%;
     text-align: center;
 }
 
-#scores tr, #gameScores tr{
+#scores tr,
+#gameScores tr {
     height: 50px;
     background-color: white;
     border-bottom: 1px solid black;
@@ -65,31 +72,38 @@ h2{
     font-weight: bold;
 }
 
-#scores tr th, #gameScores tr th{
+#scores tr th,
+#gameScores tr th {
     background-color: rgb(58, 58, 65);
     color: white;
 }
 
-.alert{
+.alert {
     display: none;
 }
 
 @media screen and (max-width: 768px) {
-    .option{
+    .option {
         width: 150px;
         height: 150px;
     }
-    #rock, #paper ,#scissors{
-    width: 150px;
+
+    #rock,
+    #paper,
+    #scissors {
+        width: 150px;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .option{
+    .option {
         width: 200px;
         height: 200px;
     }
-    #rock, #paper ,#scissors{
-    width: 200px;
+
+    #rock,
+    #paper,
+    #scissors {
+        width: 200px;
     }
 }
