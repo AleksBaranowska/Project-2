@@ -2,7 +2,41 @@ body{
     padding-top: 90px;
 }
 
+h1, #score-menu{
+    text-align: center;
+    color: white;
+}
 
+#score-menu{
+    width: 150px;
+}
+
+h2{
+    text-align: center;
+}
+
+#rock, #paper ,#scissors{
+    width: 200px;
+}
+
+.option{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 255);
+    box-shadow: 0 0 10px rgb(0, 0, 255);
+}
+
+.option:hover{
+    border: 3px solid green;
+}
+
+#main{
+    background-color: rgb(253, 251, 251);
+    display: none;
+}
 #logo{
     width: 100px;
     height: 100px;
@@ -14,8 +48,48 @@ body{
     color: white;
 }
 
-#logo{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+#scoreboard, #gameScore{
+    display: none;
+}
+
+#scores, #gameScores{
+    width: 100%;
+    text-align: center;
+}
+
+#scores tr, #gameScores tr{
+    height: 50px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    font-size: large;
+    font-weight: bold;
+}
+
+#scores tr th, #gameScores tr th{
+    background-color: rgb(58, 58, 65);
+    color: white;
+}
+
+.alert{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .option{
+        width: 150px;
+        height: 150px;
+    }
+    #rock, #paper ,#scissors{
+    width: 150px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .option{
+        width: 200px;
+        height: 200px;
+    }
+    #rock, #paper ,#scissors{
+    width: 200px;
+    }
 }
