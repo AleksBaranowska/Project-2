@@ -95,71 +95,73 @@ function computeResults() {
     }
 }
 
-function showScores(){
-    main.style.display='none';
-    gameScoreBoard.style.display='block';
+function showScores() {
+    main.style.display = 'none';
+    gameScoreBoard.style.display = 'block';
     let table = document.getElementById('gameScores');
     let row = document.createElement('tr');
     let col_1 = document.createElement('td');
-    let col_2 = document.createElement('td');   
+    let col_2 = document.createElement('td');
     let col_3 = document.createElement('td');
-    col_1.innerHTML=playerScore;
-    col_2.innerHTML=computerScore;
-    col_3.innerHTML=10-(playerScore+computerScore);
+    col_1.innerHTML = playerScore;
+    col_2.innerHTML = computerScore;
+    col_3.innerHTML = 10 - (playerScore + computerScore);
     row.append(col_1, col_2, col_3);
     table.append(row);
 }
-function showLeaderBoard(){
-    main.style.display='none';
-    landingScreen.style.display='none';
-    gameScoreBoard.style.display='none';
-    scoreBoard.style.display='block';
+
+function showLeaderBoard() {
+    main.style.display = 'none';
+    landingScreen.style.display = 'none';
+    gameScoreBoard.style.display = 'none';
+    scoreBoard.style.display = 'block';
     let table = document.getElementById("scores");
-    table.innerHTML='';
+    table.innerHTML = '';
     scores = JSON.parse(localStorage.getItem("scores"));
     scores = scores.sort(descendingSort);
     let headerRow = document.createElement('tr');
     let hCol_1 = document.createElement('th');
     let hCol_2 = document.createElement('th');
-    hCol_1.innerHTML="Name";
-    hCol_2.innerHTML="Score";
-    headerRow.append(hCol_1,hCol_2);
+    hCol_1.innerHTML = "Name";
+    hCol_2.innerHTML = "Score";
+    headerRow.append(hCol_1, hCol_2);
     table.append(headerRow);
-    for(let i=0; i<scores.length; i++){
+    for (let i = 0; i < scores.length; i++) {
         let row = document.createElement("tr");
         let col_1 = document.createElement("td");
         let col_2 = document.createElement("td");
-        col_1.innerHTML=scores[i][0];
-        col_2.innerHTML=scores[i][1]+" - "+scores[i][2];
+        col_1.innerHTML = scores[i][0];
+        col_2.innerHTML = scores[i][1] + " - " + scores[i][2];
         row.append(col_1, col_2);
         table.append(row);
     }
 }
-function descendingSort(a, b) {    
+
+function descendingSort(a, b) {
     if (a[1] > b[1]) return -1
     if (a[1] < b[1]) return 1
     return 0
-  }
-
-function getComputerChoice(){
-    let choice = Math.floor(Math.random() * 3);
-    computerChoice= choices[choice];
 }
 
-function resetRound(){
+function getComputerChoice() {
+    let choice = Math.floor(Math.random() * 3);
+    computerChoice = choices[choice];
+}
+
+function resetRound() {
     for (var i = 0; i < options.length; i++) {
         options[i].style.borderColor = 'blue';
         options[i].style.boxShadow = '0 0 10px rgb(0, 0, 255)';
     }
 }
 
-function resetGame(){
+function resetGame() {
     playerChoice = null;
     computerChoice = null;
     computerScore = 0;
     playerScore = 0;
     playerName = null;
     rounds = 10;
-    gameScoreBoard.style.display="none";
-    landingScreen.style.display='block';
+    gameScoreBoard.style.display = "none";
+    landingScreen.style.display = 'block';
 }

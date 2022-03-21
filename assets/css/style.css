@@ -38,7 +38,8 @@ h2 {
 
 #main {
     background-color: rgb(253, 251, 251);
-    display: none;
+    /* display: none; */
+    padding-top: 30px;
 }
 
 #logo {
@@ -81,6 +82,11 @@ h2 {
 .alert {
     display: none;
 }
+
+.justify-content-center {
+    padding: 10px;
+}
+
 
 @media screen and (max-width: 768px) {
     .option {
