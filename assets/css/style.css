@@ -38,7 +38,7 @@ h2 {
 
 #main {
     background-color: rgb(253, 251, 251);
-    /* display: none; */
+    display: none;
     padding-top: 30px;
 }
 
